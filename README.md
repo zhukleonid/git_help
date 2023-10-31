@@ -186,11 +186,9 @@ Git хранит таблицу соответствий `хеш → инфор�
 <br>
 
 ```mermaid
-%% Основные жизненные циклы файла в Git
- 
-graph LR;
-    untracked-->"git add"-->stagedTracked + tracked-->"git commit"-->tracked;
-    tracked-->"изменения"-->modified-->"git add"-->stagedTracked + tracked;
+graph TD;
+untracked-- "git add" --> staged+tracked--"git commit"-->tracked;
+tracked-- "изменения" --> modified-- "git add" --> staged+tracked;
 ```
 
 <br>
